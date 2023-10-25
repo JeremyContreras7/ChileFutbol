@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">ChileFutbol</string>
     <string name="title_activity_colocoloactivity">Colocoloactivity</string>
+    <string name="my_map_api_key">AIzaSyAb3ctveMffmXYB2rKATaLpnkSnisqSggU</string>
 </resources>
