@@ -11,16 +11,18 @@ import android.widget.ImageButton;
 public class MainActivity2 extends AppCompatActivity {
     Button boton2;
     Button boton1;
-    Button boton3;
+    Button boton3,boton5;
     ImageButton boton4;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        boton5 = findViewById(R.id.btnPlantilla1);
         boton2 = findViewById(R.id.btnVolver);
         boton1 = findViewById(R.id.btnequipoC);
         boton3 = findViewById(R.id.btndatosColo);
         boton4 = findViewById(R.id.btnmapacolocolo);
+
         boton2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +48,13 @@ public class MainActivity2 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(), mapacolocolo.class);
+                startActivity(intent);
+            }
+        });
+        boton5.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),Plantillacolo.class);
                 startActivity(intent);
             }
         });

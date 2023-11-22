@@ -11,79 +11,76 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.chilefutbol.MainActivity;
-import com.example.chilefutbol.R;
-import com.example.chilefutbol.RegistroActivity;
-import android.database.Cursor;
-import android.database.sqlite.SQLiteDatabase;
-
-
-
 public class LoginActivity extends AppCompatActivity {
-    private Button boton1;
-    private Button boton2;
-    private Button botoningresar;
-    private EditText usuario;
-    private EditText contrasena;
+    private EditText editTextUsername, editTextPassword;
+    private Button buttonLogin, buttonGoToRegister;
+    private SQLiteDatabase db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
 
-        boton1 = findViewById(R.id.btnirRegistro);
-        boton2 = findViewById(R.id.btnSaltar);
-        botoningresar = findViewById(R.id.btningreso);
-        usuario = findViewById(R.id.txtusuario);
-        contrasena = findViewById(R.id.txtcontrasena);
+        editTextUsername = findViewById(R.id.editTextLoginUsername);
+        editTextPassword = findViewById(R.id.editTextLoginPassword);
+        buttonLogin = findViewById(R.id.buttonLogin);
+        buttonGoToRegister = findViewById(R.id.buttonGoToRegister);
 
-        boton1.setOnClickListener(new View.OnClickListener() {
+        // Abrir o crear la base de datos
+        db = openOrCreateDatabase("UsuariosDB", MODE_PRIVATE, null);
+
+        buttonLogin.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), RegistroActivity.class);
-                startActivity(intent);
-            }
-        });
+            public void onClick(View v) {
+                String username = editTextUsername.getText().toString();
+                String password = editTextPassword.getText().toString();
 
-        boton2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
-            }
-        });
+                // Verificar las credenciales en la base de datos
+                if (loginUser(username, password)) {
+                    // Inicio de sesión exitoso, realizar acciones adicionales o navegar a otra actividad
+                    Toast.makeText(LoginActivity.this, "Inicio de sesión exitoso", Toast.LENGTH_SHORT).show();
 
-        botoningresar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                String usuarioIngresado = usuario.getText().toString();
-                String contrasenaIngresada = contrasena.getText().toString();
-
-                if (verificarUsuario(usuarioIngresado, contrasenaIngresada)) {
+                    // Por ejemplo, puedes navegar a la actividad del menú
                     Intent intent = new Intent(LoginActivity.this, MainActivity.class);
                     startActivity(intent);
+                    finish(); // Cierra la actividad actual para evitar volver atrás
                 } else {
-                    Toast.makeText(LoginActivity.this, "Usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
+                    // Credenciales incorrectas, mostrar un mensaje de error
+                    Toast.makeText(LoginActivity.this, "Nombre de usuario o contraseña incorrectos", Toast.LENGTH_SHORT).show();
                 }
             }
         });
+
+        buttonGoToRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Ir a la actividad de registro
+                Intent intent = new Intent(LoginActivity.this, RegistroActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
-    private boolean verificarUsuario(String usuario, String contrasena) {
-        // Asegúrate de que la variable db esté correctamente inicializada
-        SQLiteDatabase db = openOrCreateDatabase("UsuariosDB", MODE_PRIVATE, null);
+    // Método para verificar las credenciales del usuario en la base de datos
+    private boolean loginUser(String username, String password) {
+        String[] columns = {"id"};
+        String selection = "nombre=? AND contrasena=?";
+        String[] selectionArgs = {username, password};
 
-        String consulta = "SELECT * FROM usuarios WHERE correo = ? AND contrasena = ?";
-        String[] argumentos = {usuario, contrasena};
-        Cursor cursor = db.rawQuery(consulta, argumentos);
-        boolean usuarioCorrecto = cursor.moveToFirst();
+        Cursor cursor = db.query("usuarios", columns, selection, selectionArgs, null, null, null);
+
+        int count = cursor.getCount();
         cursor.close();
 
-        // Cierra la base de datos después de usarla
-        db.close();
-
-        return usuarioCorrecto;
+        return count > 0;
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        // Cerrar la base de datos al destruir la actividad
+        if (db != null) {
+            db.close();
+        }
+    }
 }
-

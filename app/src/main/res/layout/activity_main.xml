@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,23 +8,39 @@
     android:background="@drawable/fondo"
     tools:context=".MainActivity">
 
+    <!-- Fondo semi-transparente -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Texto de selección -->
     <TextView
         android:id="@+id/textView"
-        android:layout_width="326dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="96dp"
-        android:layout_marginEnd="35dp"
-        android:background="@color/white"
-        android:text="Escoga Una Opcion"
+        android:layout_marginBottom="16dp"
+        android:layout_gravity="center_horizontal"
+        android:padding="16dp"
+        android:background="#F40000"
+        android:text="Escoge Una Opción"
         android:textAlignment="center"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="34sp"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textSize="24sp"
         android:textStyle="bold|italic"
-        app:layout_constraintEnd_toEndOf="parent"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/btnColo"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
+
+    <!-- Botón Colo-Colo -->
     <ImageButton
         android:id="@+id/btnColo"
         android:layout_width="150dp"
@@ -37,17 +54,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/colocolo" />
 
+    <!-- Botón Universidad de Chile -->
+
+    <!-- Botón de regreso al login -->
     <ImageButton
         android:id="@+id/btnU"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="124dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnirpartidos"
+        app:layout_constraintTop_toBottomOf="@+id/btnColo"
         app:srcCompat="@drawable/udechile" />
 
     <ImageButton
@@ -62,6 +82,7 @@
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/logeo" />
 
+    <!-- Botón para ir a partidos -->
     <ImageButton
         android:id="@+id/btnirpartidos"
         android:layout_width="83dp"

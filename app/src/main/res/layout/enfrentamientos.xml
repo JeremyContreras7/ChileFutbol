@@ -1,165 +1,56 @@
-<?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".EnfrentamientosActivity">
 
-    <ImageView
-        android:id="@+id/imageView33"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="27dp"
-        android:layout_marginEnd="43dp"
-        app:layout_constraintEnd_toStartOf="@+id/textView34"
-        app:layout_constraintStart_toEndOf="@+id/textView30"
-        app:layout_constraintTop_toBottomOf="@+id/textView36"
-        app:srcCompat="@drawable/colocolo" />
-
-    <ImageView
-        android:id="@+id/imageView34"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:layout_marginStart="121dp"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="140dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView36"
-        app:srcCompat="@drawable/udechile" />
-
-    <ImageView
-        android:id="@+id/imageView36"
-        android:layout_width="116dp"
-        android:layout_height="92dp"
-        android:layout_marginStart="138dp"
-        android:layout_marginTop="65dp"
-        android:layout_marginEnd="157dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView33"
-        app:srcCompat="@drawable/vs" />
-
-    <TextView
-        android:id="@+id/textView30"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextEquipo1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="26dp"
-        android:layout_marginTop="61dp"
-        android:background="@color/black"
-        android:backgroundTint="@color/black"
-        android:text="89\nVictorias"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnvolverpartidos" />
+        android:hint="Equipo 1" />
 
-    <TextView
-        android:id="@+id/textView31"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextEquipo2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="38dp"
-        android:layout_marginTop="145dp"
-        android:layout_marginEnd="22dp"
-        android:background="#0A216F"
-        android:text="48\nVictorias"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageView34"
-        app:layout_constraintTop_toBottomOf="@+id/textView33" />
+        android:hint="Equipo 2"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextAnotacionesEquipo1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Anotaciones Equipo 1"
+        android:inputType="number"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextAnotacionesEquipo2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Anotaciones Equipo 2"
+        android:inputType="number"
+        android:layout_marginTop="16dp" />
 
     <Button
-        android:id="@+id/btnvolverpartidos"
-        android:layout_width="61dp"
-        android:layout_height="53dp"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="10dp"
-        android:background="@android:drawable/ic_media_rew"
-        android:text=""
-        app:layout_constraintEnd_toStartOf="@+id/textView36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView32"
-        android:layout_width="wrap_content"
+        android:id="@+id/buttonAgregar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="139dp"
-        android:layout_marginEnd="34dp"
-        android:background="#FFD600"
-        android:text="56\nEmpates"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView36"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+        android:text="Agregar Datos" />
 
-    <TextView
-        android:id="@+id/textView33"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="248dp"
-        android:layout_marginTop="147dp"
-        android:layout_marginEnd="16dp"
-        android:background="#FCD300"
-        android:text="193\nPartidos"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView34" />
+    <ListView
+        android:id="@+id/listView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp"/>
 
-    <TextView
-        android:id="@+id/textView34"
-        android:layout_width="wrap_content"
+    <Button
+        android:id="@+id/buttonVolver"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="139dp"
-        android:layout_marginEnd="37dp"
-        android:background="#0E0E0E"
-        android:text="326\nGoles"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView35"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="45dp"
-        android:layout_marginTop="156dp"
-        android:layout_marginEnd="25dp"
-        android:background="#0A216F"
-        android:text="239\nGoles"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView34"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView32" />
-
-    <TextView
-        android:id="@+id/textView36"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="56dp"
-        android:background="#FED500"
-        android:text="Enfrentamientos"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:text="Volver" />
+</LinearLayout>

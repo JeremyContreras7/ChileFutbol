@@ -1,49 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@drawable/fondou"
-    tools:context=".UdechileActivity">
+    android:layout_height="match_parent">
 
+    <!-- Imagen de fondo -->
+    <ImageView
+        android:id="@+id/imageViewBackground"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@drawable/fondou"
+        android:scaleType="centerCrop" />
+
+    <!-- Capa semi-transparente -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
+    <!-- Botón Datos -->
+    <!-- Botón Datos -->
     <Button
         android:id="@+id/btndatosU"
-        android:layout_width="130dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="98dp"
-        android:layout_marginEnd="131dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="#3949AB"
-        android:text="Datos"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:text="¡Datos Importantes!"
+        android:textColor="#FFFFFF"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+    android:padding="20dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- Botón Equipo -->
     <Button
         android:id="@+id/btnEquipou"
-        android:layout_width="130dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="136dp"
-        android:layout_marginEnd="131dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
         android:backgroundTint="#F10404"
-        android:text="Equipo"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btndatosU" />
+        android:text="¡Haz tu 11!"
+        android:textColor="#FFFFFF"
+        android:textAppearance="@style/TextAppearance.AppCompat.Headline"
+    android:padding="20dp"
+    android:gravity="center"
+    android:layout_gravity="center"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/btndatosU" />
 
+
+    <!-- Botón Volver -->
     <Button
         android:id="@+id/btnVolver"
-        android:layout_width="130dp"
-        android:layout_height="75dp"
-        android:layout_marginStart="150dp"
-        android:layout_marginTop="129dp"
-        android:layout_marginEnd="131dp"
-        android:background="@android:drawable/ic_media_rew"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#F00404"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="Volver"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnPlantilla" />
+
+    <Button
+        android:id="@+id/btnPlantilla"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:backgroundTint="#3949AA"
+        android:gravity="center"
+        android:padding="16dp"
+        android:text="¡Nuestro Equipo!"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="@color/white"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnEquipou" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

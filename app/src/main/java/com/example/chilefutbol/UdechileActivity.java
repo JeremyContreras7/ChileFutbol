@@ -8,7 +8,7 @@ import android.view.View;
 
 public class UdechileActivity extends AppCompatActivity {
 Button boton3;
-Button boton1;
+Button boton1,boton4;
 Button boton2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ Button boton2;
         boton3 = findViewById(R.id.btnVolver);
         boton1 = findViewById(R.id.btnEquipou);
         boton2 = findViewById(R.id.btndatosU);
+        boton4 = findViewById(R.id.btnPlantilla);
 
         boton3.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -36,6 +37,13 @@ Button boton2;
             @Override
             public void onClick(View view) {
                 Intent intent=new Intent(getApplicationContext(),DatosudechileActivity.class);
+                startActivity(intent);
+            }
+        });
+        boton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(getApplicationContext(),PlantillaUdeChile.class);
                 startActivity(intent);
             }
         });

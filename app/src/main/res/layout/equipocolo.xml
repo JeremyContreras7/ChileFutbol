@@ -1,195 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFD600"
+    android:orientation="vertical"
+    android:padding="16dp"
     tools:context=".EquipocoloActivity">
 
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextDorsal"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:background="@color/white"
-        android:text="
-        15.Emiliano Amor
-        37.Falcon
-        3.Gutierrez\n
-        23.Gonzalez
-        4.Saldivia
-        21.Wiemberg\n
-        32.Opazo
-        2.Rojas
-        13.Gutierrez"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+        android:hint="Dorsal"
+        android:inputType="number" />
 
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
+    <EditText
+        android:id="@+id/editTextNombre"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:barrierDirection="top" />
-
-    <androidx.constraintlayout.widget.Barrier
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:barrierDirection="top" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="166dp"
-        android:layout_height="31dp"
-        android:layout_marginTop="26dp"
-        android:background="@color/white"
-        android:text="    1.Cortes  30.De Paul"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.567"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="33dp"
-        android:layout_marginBottom="66dp"
-        android:background="@color/white"
-        android:text="
-        23.Pavez
-        34.Pizarro
-        6.Fuentes
-        28.Soto\n
-        5.Gil
-        7.Palacios
-        10.Parra"
-        android:textColor="@color/black"
-        app:layout_constraintBottom_toTopOf="@+id/imageView4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:background="@color/white"
-        android:text="
-            20.Oroz
-            26.Moya
-            18.Bouzat\n
-            17.Castillo
-            24.Thompson
-            11.Bolados\n
-            16.Lezcano
-            9.Pizzaro
-            22.Benegas
-"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.49"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
-
-    <ImageView
-        android:id="@+id/imageView2"
-        android:layout_width="55dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="35dp"
-        android:layout_marginBottom="26dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/portero" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="37dp"
-        android:layout_height="41dp"
-        android:layout_marginTop="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.51"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
-        app:srcCompat="@drawable/defensa" />
-
-    <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="44dp"
-        android:layout_height="21dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.509"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView4"
-        app:srcCompat="@drawable/delantero" />
-
-    <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="46dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="21dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.512"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3"
-        app:srcCompat="@drawable/mediocentro" />
-
-    <ImageView
-        android:id="@+id/imageView10"
-        android:layout_width="60dp"
-        android:layout_height="50dp"
         android:layout_marginTop="16dp"
-        android:layout_marginBottom="130dp"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.864"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/colocolo" />
+        android:hint="Nombre" />
+
+    <EditText
+        android:id="@+id/editTextPosicion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="Posición" />
 
     <Button
-        android:id="@+id/btnvolverco"
-        android:layout_width="60dp"
-        android:layout_height="40dp"
-        android:layout_marginTop="24dp"
-        android:layout_marginBottom="186dp"
-        android:background="@android:drawable/ic_media_rew"
-        app:layout_constraintBottom_toTopOf="@+id/textView3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView2"
-        app:layout_constraintHorizontal_bias="0.22"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.148" />
-
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="wrap_content"
+        android:id="@+id/btnAgregar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="55dp"
-        android:background="@color/white"
-        android:text="Gustavo Quinteros"
-        android:textColor="@color/black"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11" />
+        android:layout_marginTop="16dp"
+        android:text="Agregar"
+        android:onClick="agregarDato"/>
 
-    <ImageView
-        android:id="@+id/imageView11"
-        android:layout_width="46dp"
-        android:layout_height="22dp"
-        android:layout_marginTop="44dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.506"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView5"
-        app:srcCompat="@drawable/dt" />
+    <ListView
+        android:id="@+id/listViewDatos"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Volver"
+        android:onClick="volverAtras"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
