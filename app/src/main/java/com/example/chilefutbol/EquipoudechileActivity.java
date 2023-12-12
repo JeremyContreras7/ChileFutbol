@@ -1,101 +1,98 @@
 package com.example.chilefutbol;
-
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
+import androidx.appcompat.app.AppCompatActivity;
+
 import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.Set;
+
 public class EquipoudechileActivity extends AppCompatActivity {
-    private EditText editTextDorsal;
-    private EditText editTextNombre;
-    private EditText editTextPosicion;
+
+    private EditText editTextDorsal, editTextNombre, editTextPosicion;
+    private Button btnAgregar, btnEliminarTodo, btnVolver;
     private ListView listViewDatos;
-    private ArrayList<String> listaDatos;
+    private ArrayList<String> listaJugadores;
     private ArrayAdapter<String> adapter;
-    private static final String PREFS_NAME = "MisPreferencias";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.equipocolo);
+        setContentView(R.layout.equipoudechile);
 
-        editTextDorsal = findViewById(R.id.editTextDorsal);
-        editTextNombre = findViewById(R.id.editTextNombre);
-        editTextPosicion = findViewById(R.id.editTextPosicion);
-        listViewDatos = findViewById(R.id.listViewDatos);
-        listaDatos = new ArrayList<>();
+        editTextDorsal = findViewById(R.id.editTextDorsal1);
+        editTextNombre = findViewById(R.id.editTextNombre1);
+        editTextPosicion = findViewById(R.id.editTextPosicion1);
+        btnAgregar = findViewById(R.id.btnAgregar1);
+        btnEliminarTodo = findViewById(R.id.btnEliminarTodo1);
+        btnVolver = findViewById(R.id.btnVolver1);
+        listViewDatos = findViewById(R.id.listViewDatos1);
 
-        // Crear un adaptador para la lista
-        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaDatos);
+        // Inicializar la lista de jugadores
+        listaJugadores = new ArrayList<>();
 
-        // Vincular el adaptador a la lista
+        // Inicializar el adaptador
+        adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, listaJugadores);
+
+        // Asignar el adaptador a la lista
         listViewDatos.setAdapter(adapter);
 
-        cargarDatos();
-
-        Button btnAgregar = findViewById(R.id.btnAgregar);
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
+            public void onClick(View v) {
                 agregarDato();
             }
         });
 
-        Button btnVolver = findViewById(R.id.btnVolver);
+        btnEliminarTodo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                eliminarTodo();
+            }
+        });
+
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                finish();
+            public void onClick(View v) {
+                volverAtras();
             }
         });
     }
 
     public void agregarDato() {
-        // Obtener los valores de los EditText
+        // Obtener datos de los EditText
         String dorsal = editTextDorsal.getText().toString();
         String nombre = editTextNombre.getText().toString();
         String posicion = editTextPosicion.getText().toString();
 
-        // Construir el string a mostrar en la lista
-        String dato = "Dorsal: " + dorsal + "\nNombre: " + nombre + "\nPosición: " + posicion;
+        // Crear una cadena con la información del jugador
+        String jugador = "Dorsal: " + dorsal + "\nNombre: " + nombre + "\nPosición: " + posicion;
 
-        // Agregar el string a la lista de datos
-        listaDatos.add(dato);
+        // Agregar el jugador a la lista
+        listaJugadores.add(jugador);
 
-        // Notificar al adaptador que los datos han cambiado
+        // Actualizar la lista
         adapter.notifyDataSetChanged();
 
-        // Limpiar los EditText
+        // Limpiar los EditText después de agregar el jugador
         editTextDorsal.getText().clear();
         editTextNombre.getText().clear();
         editTextPosicion.getText().clear();
-
-        // Guardar los datos
-        guardarDatos();
     }
 
-    private void guardarDatos() {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = preferences.edit();
-        Set<String> set = new HashSet<>(listaDatos);
-        editor.putStringSet("listaDatos", set);
-        editor.apply();
+    public void eliminarTodo() {
+        // Limpiar la lista de jugadores
+        listaJugadores.clear();
+
+        // Actualizar la lista
+        adapter.notifyDataSetChanged();
     }
 
-    private void cargarDatos() {
-        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
-        Set<String> set = preferences.getStringSet("listaDatos", null);
-        if (set != null) {
-            listaDatos.addAll(set);
-            adapter.notifyDataSetChanged();
-        }
+    public void volverAtras() {
+        // Implementa lógica para volver atrás, si es necesario
+        // Puedes utilizar finish() para cerrar la actividad si lo deseas
+        finish();
     }
 }

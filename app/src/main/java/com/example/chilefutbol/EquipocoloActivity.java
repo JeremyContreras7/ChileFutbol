@@ -1,5 +1,4 @@
 package com.example.chilefutbol;
-
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -46,6 +45,14 @@ public class EquipocoloActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 agregarDato();
+            }
+        });
+
+        Button btnEliminarTodos = findViewById(R.id.btnEliminarTodos);
+        btnEliminarTodos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                eliminarTodos();
             }
         });
 
@@ -97,5 +104,19 @@ public class EquipocoloActivity extends AppCompatActivity {
             listaDatos.addAll(set);
             adapter.notifyDataSetChanged();
         }
+    }
+
+    private void eliminarTodos() {
+        // Limpiar la lista de datos
+        listaDatos.clear();
+
+        // Notificar al adaptador que los datos han cambiado
+        adapter.notifyDataSetChanged();
+
+        // Eliminar los datos guardados
+        SharedPreferences preferences = getSharedPreferences(PREFS_NAME, Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.remove("listaDatos");
+        editor.apply();
     }
 }

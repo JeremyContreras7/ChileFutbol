@@ -2,6 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/fondo2"
     android:orientation="vertical"
     android:padding="16dp"
     tools:context=".EnfrentamientosActivity">
@@ -10,47 +11,54 @@
         android:id="@+id/editTextEquipo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/white"
         android:hint="Equipo 1" />
 
     <EditText
         android:id="@+id/editTextEquipo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Equipo 2"
-        android:layout_marginTop="16dp" />
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
+        android:hint="Equipo 2" />
 
     <EditText
         android:id="@+id/editTextAnotacionesEquipo1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
         android:hint="Anotaciones Equipo 1"
-        android:inputType="number"
-        android:layout_marginTop="16dp" />
+        android:inputType="number" />
 
     <EditText
         android:id="@+id/editTextAnotacionesEquipo2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/white"
         android:hint="Anotaciones Equipo 2"
-        android:inputType="number"
-        android:layout_marginTop="16dp" />
+        android:inputType="number" />
 
     <Button
         android:id="@+id/buttonAgregar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#D50000"
         android:text="Agregar Datos" />
 
     <ListView
         android:id="@+id/listView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:layout_weight="1"
-        android:layout_marginTop="16dp"/>
+        android:background="@color/white" />
 
     <Button
         android:id="@+id/buttonVolver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="#304FFE"
         android:text="Volver" />
 </LinearLayout>

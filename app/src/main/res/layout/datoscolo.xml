@@ -4,8 +4,19 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFD600"
+    android:background="@drawable/fondocolo"
     tools:context=".DatoscoloActivity">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView16"
@@ -195,7 +206,7 @@
         android:layout_marginTop="36dp"
         android:layout_marginEnd="180dp"
         android:background="@color/black"
-        android:text="Records"
+        android:text="Leyendas"
         android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -205,51 +216,22 @@
 
     <ImageView
         android:id="@+id/imageView27"
-        android:layout_width="129dp"
-        android:layout_height="136dp"
+        android:layout_width="114dp"
+        android:layout_height="122dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19"
-        app:srcCompat="@drawable/garrido" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="31dp"
-        android:background="@color/black"
-        android:text="Maximo Goleador\nCarlos Cazely\n 208 goles en 373 partidos"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toStartOf="@+id/textView21"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView25" />
+        app:srcCompat="@drawable/paredes" />
 
     <ImageView
         android:id="@+id/imageView25"
-        android:layout_width="122dp"
-        android:layout_height="135dp"
+        android:layout_width="106dp"
+        android:layout_height="116dp"
         android:layout_marginStart="40dp"
         android:layout_marginTop="12dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView19"
         app:srcCompat="@drawable/cazely" />
 
-    <TextView
-        android:id="@+id/textView21"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="29dp"
-        android:background="@color/black"
-        android:text="Jugador con mas partidos\nLizardo Garrido\n559 Partidos"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView20"
-        app:layout_constraintTop_toBottomOf="@+id/imageView27" />
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,102 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/fondo2"
+    android:paddingLeft="16dp"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
     tools:context=".RegistroActivity">
 
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000" />
+
     <ImageView
-        android:id="@+id/imageView14"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="60dp"
-        android:layout_marginStart="100dp"
-        android:layout_marginEnd="100dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/betson" />
+        android:id="@+id/logoImageView"
+        android:layout_width="160dp"
+        android:layout_height="223dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:src="@drawable/betson" />
 
     <EditText
-        android:id="@+id/txtnombre"
-        android:layout_width="0dp"
+        android:id="@+id/emailEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Ingrese su Nombre"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/imageView14"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/txtapellido"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_below="@id/logoImageView"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Ingrese su Apellido"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/txtnombre"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:background="@color/white"
+        android:hint="Correo"
+        android:inputType="textEmailAddress" />
 
     <EditText
-        android:id="@+id/txtcorreo"
-        android:layout_width="0dp"
+        android:id="@+id/passwordEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/emailEditText"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Ingrese su Correo"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@+id/txtapellido"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:background="@color/white"
+        android:hint="Contraseña"
+        android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/txtcontrasena1"
-        android:layout_width="0dp"
+        android:id="@+id/nameEditText"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/passwordEditText"
         android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="16dp"
-        android:ems="10"
-        android:hint="Ingrese su Contraseña"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/txtcorreo"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        android:background="@color/white"
+        android:hint="Nombre" />
 
     <Button
-        android:id="@+id/btnvolverregistro"
-        android:layout_width="0dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="#D50000"
-        android:text="Iniciar Sesión"
-        app:iconTint="#E31111"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtcontrasena1" />
-
-    <Button
-        android:id="@+id/btnregistrar"
-        android:layout_width="0dp"
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/nameEditText"
         android:layout_marginTop="16dp"
         android:backgroundTint="#304FFE"
-        android:text="Registrarse"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnvolverregistro" />
+        android:onClick="registerUser"
+        android:text="Registrarse" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</RelativeLayout>

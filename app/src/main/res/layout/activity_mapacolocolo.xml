@@ -14,12 +14,6 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         tools:context=".MapsActivity" />
 
-    <Button
-        android:id="@+id/btnVolverMenu"
-        android:layout_width="81dp"
-        android:layout_height="51dp"
-        android:background="@android:drawable/ic_media_rew"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

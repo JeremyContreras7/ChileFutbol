@@ -1,53 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
+    android:background="@drawable/fondou"
     tools:context=".EquipoudechileActivity">
 
-    <EditText
-        android:id="@+id/editTextDorsal"
+    <!-- Contenedor para el fondo oscuro semitransparente -->
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Dorsal"
-        android:inputType="number" />
+        android:layout_height="match_parent"
+        android:background="#80000000" />
 
-    <EditText
-        android:id="@+id/editTextNombre"
+    <!-- Contenido de la actividad -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Nombre" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp">
 
-    <EditText
-        android:id="@+id/editTextPosicion"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:hint="Posición" />
+        <EditText
+            android:id="@+id/editTextDorsal1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:backgroundTint="#FFFFFF"
+            android:hint="Dorsal"
+            android:inputType="number"
+            android:textColor="@color/black" />
 
-    <Button
-        android:id="@+id/btnAgregar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="Agregar"
-        android:onClick="agregarDato"/>
+        <EditText
+            android:id="@+id/editTextNombre1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:backgroundTint="#FBFBFB"
+            android:hint="Nombre"
+            android:textColor="@color/black" />
 
-    <ListView
-        android:id="@+id/listViewDatos"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:layout_marginTop="16dp" />
-    <Button
-        android:id="@+id/btnVolver"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Volver"
-        android:onClick="volverAtras"/>
+        <EditText
+            android:id="@+id/editTextPosicion1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/white"
+            android:backgroundTint="#FFFFFF"
+            android:hint="Posición"
+            android:textColor="@color/black" />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/btnAgregar1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#2962FF"
+            android:onClick="agregarDato"
+            android:text="Agregar" />
+
+        <ListView
+            android:id="@+id/listViewDatos1"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:background="@color/white" />
+
+        <Button
+            android:id="@+id/btnEliminarTodo1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="#D50000"
+            android:onClick="eliminarTodo"
+            android:text="Eliminar Todo" />
+
+        <Button
+            android:id="@+id/btnVolver1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#304FFE"
+            android:onClick="volverAtras"
+            android:text="Volver" />
+    </LinearLayout>
+</FrameLayout>

@@ -5,20 +5,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/alexis"
     tools:context=".MainActivity">
 
     <!-- Fondo semi-transparente -->
+
+    <!-- Texto de selección -->
     <View
+        android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="#80000000"
-        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
-    <!-- Texto de selección -->
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
@@ -36,9 +40,8 @@
         android:textColor="@color/white"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/btnColo"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/btnlogeovolver"
         app:layout_constraintEnd_toEndOf="parent" />
-
 
     <!-- Botón Colo-Colo -->
     <ImageButton
@@ -49,52 +52,77 @@
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView"
         app:srcCompat="@drawable/colocolo" />
 
     <!-- Botón Universidad de Chile -->
-
-    <!-- Botón de regreso al login -->
     <ImageButton
         android:id="@+id/btnU"
         android:layout_width="150dp"
         android:layout_height="150dp"
-        android:layout_marginTop="124dp"
+        android:layout_marginTop="56dp"
         android:backgroundTint="#00FFFFFF"
         android:scaleType="fitCenter"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btnColo"
         app:srcCompat="@drawable/udechile" />
 
-    <ImageButton
-        android:id="@+id/btnlogeovolver"
-        android:layout_width="69dp"
-        android:layout_height="76dp"
-        android:layout_marginStart="3dp"
-        android:layout_marginTop="1dp"
-        android:backgroundTint="@color/white"
-        android:scaleType="fitCenter"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/logeo" />
+    <!-- Botón de regreso al login -->
 
     <!-- Botón para ir a partidos -->
+
+    <!-- Botón para ir a ProfileActivity -->
+
+    <!-- Botón Gohan -->
+
     <ImageButton
-        android:id="@+id/btnirpartidos"
-        android:layout_width="83dp"
-        android:layout_height="90dp"
-        android:layout_marginStart="164dp"
-        android:layout_marginTop="18dp"
-        android:layout_marginEnd="164dp"
-        android:backgroundTint="#00FFFFFF"
+        android:id="@+id/btnlogeovolver"
+        android:layout_width="52dp"
+        android:layout_height="52dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="108dp"
+        android:background="@drawable/iconlogeo"
         android:scaleType="fitCenter"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnColo"
-        app:srcCompat="@drawable/vs" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/iconlogeo" />
+
+    <Button
+        android:id="@+id/btnpartido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#D50000"
+        android:text="¡tu \nprediccion!"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btnProfile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#D50000"
+        android:text="Chat"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.789"
+        app:layout_constraintStart_toEndOf="@+id/btngohan"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btngohan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:backgroundTint="#D50000"
+        android:text="Perfil"
+        app:layout_constraintStart_toEndOf="@+id/btnpartido"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

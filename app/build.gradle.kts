@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    id("com.google.gms.google-services")
 }
 
 android {
@@ -68,6 +69,19 @@ dependencies {
     debugImplementation("androidx.compose.ui:ui-test-manifest")
     implementation("com.android.volley:volley:1.2.1")
     implementation ("com.google.android.gms:play-services-maps:18.1.0")
+    implementation(platform("com.google.firebase:firebase-bom:32.6.0"))
+    implementation("com.google.firebase:firebase-analytics")
+    implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-auth:22.3.0")
+    implementation("org.eclipse.paho:org.eclipse.paho.client.mqttv3:1.2.5")
+    implementation("com.google.firebase:firebase-storage")
+    implementation ("com.squareup.picasso:picasso:2.71828")
+
+
+
+    implementation("org.eclipse.paho:org.eclipse.paho.android.service:1.1.1")
+
+
 
 
 }

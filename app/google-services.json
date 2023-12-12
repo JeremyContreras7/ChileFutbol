@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "962941115410",
+    "project_id": "futbol-d9fa6",
+    "storage_bucket": "futbol-d9fa6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:962941115410:android:d3f2eb1dbce58ce045cccb",
+        "android_client_info": {
+          "package_name": "com.example.chilefutbol"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAcmkpsiy0kT9gXpq6U59PptJ619bwOFa4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

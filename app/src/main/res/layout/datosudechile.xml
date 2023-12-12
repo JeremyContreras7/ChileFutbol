@@ -4,8 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#3949AB"
+    android:background="@drawable/fondou"
     tools:context=".DatosudechileActivity">
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#80000000"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 
     <ImageView
         android:id="@+id/imageView20"
@@ -140,10 +150,10 @@
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:background="@android:drawable/ic_media_rew"
-        android:backgroundTint="@color/design_default_color_error"
+        android:backgroundTint="#6750A3"
         app:icon="@android:drawable/ic_media_rew"
         app:iconPadding="16dp"
-        app:iconTint="@color/design_default_color_error"
+        app:iconTint="#6750A3"
         app:layout_constraintEnd_toStartOf="@+id/textView26"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -181,7 +191,7 @@
         android:layout_marginTop="75dp"
         android:layout_marginEnd="137dp"
         android:background="#EC0202"
-        android:text="Records"
+        android:text="Leyendas"
         android:textColor="@color/white"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -198,7 +208,7 @@
         app:layout_constraintEnd_toStartOf="@+id/imageView32"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView27"
-        app:srcCompat="@drawable/campos" />
+        app:srcCompat="@drawable/leonel" />
 
     <ImageView
         android:id="@+id/imageView32"
@@ -210,31 +220,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/imageView31"
         app:layout_constraintTop_toBottomOf="@+id/textView27"
-        app:srcCompat="@drawable/musrii" />
+        app:srcCompat="@drawable/salas" />
 
-    <TextView
-        android:id="@+id/textView28"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="52dp"
-        android:layout_marginTop="8dp"
-        android:background="#EB0202"
-        android:text="Maximo Goleador\nCarlos Campos\n199 Goles"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView31" />
-
-    <TextView
-        android:id="@+id/textView29"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="7dp"
-        android:background="#EB0202"
-        android:text="Jugador Con Mas Partidos\nLuis Musrri\n540 Partidos"
-        android:textAlignment="center"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView32" />
 </androidx.constraintlayout.widget.ConstraintLayout>
