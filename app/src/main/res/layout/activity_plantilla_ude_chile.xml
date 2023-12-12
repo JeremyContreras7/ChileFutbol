@@ -3,14 +3,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/alexis"
     tools:context=".PlantillaUdeChile">
 
     <ListView
         android:id="@+id/listViewJugadores"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:padding="16dp"
-        android:divider="@android:color/darker_gray"
-        android:dividerHeight="0.5dp" />
+        android:textColor="@color/white"
+        android:divider="@color/cardview_light_background"
+        android:dividerHeight="0.5dp"
+        android:padding="16dp" />
 
 </RelativeLayout>

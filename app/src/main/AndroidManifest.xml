@@ -21,9 +21,7 @@
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />
-        <activity
-            android:name=".Sonido"
-            android:exported="false" />
+
         <activity
             android:name=".PlantillaUdeChile"
             android:exported="false" />
@@ -45,9 +43,7 @@
         <activity
             android:name=".EnfrentamientosActivity"
             android:exported="true" />
-        <activity
-            android:name=".MapeocolocoloActivity"
-            android:exported="false" />
+       
         <activity
             android:name=".DatosudechileActivity"
             android:exported="true" />

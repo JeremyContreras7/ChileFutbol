@@ -2,7 +2,7 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/fondo"
+    android:background="@drawable/matiasf"
     android:padding="16dp">
 
     <View
@@ -24,7 +24,7 @@
         android:layout_below="@+id/profileImageView"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#00C853"
+        android:backgroundTint="#D50000"
         android:text="Cambiar Foto de Perfil" />
 
     <EditText
@@ -45,7 +45,7 @@
         android:layout_below="@+id/usernameEditText"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:backgroundTint="#00C853"
+        android:backgroundTint="#D50000"
         android:text="Guardar Perfil" />
 
 </RelativeLayout>

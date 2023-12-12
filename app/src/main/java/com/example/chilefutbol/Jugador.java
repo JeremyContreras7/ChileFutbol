@@ -3,10 +3,10 @@ package com.example.chilefutbol;
 public class Jugador {
     private String nombre;
     private String posicion;
-    private  String dorsal;
+    private  Integer dorsal;
 
 
-    public Jugador(String nombre, String posicion,String dorsal) {
+    public Jugador(String nombre, String posicion,Integer dorsal) {
         this.nombre = nombre;
         this.posicion = posicion;
         this.dorsal = dorsal;
@@ -20,7 +20,7 @@ public class Jugador {
         return posicion;
     }
 
-    public String getDorsal() {
+    public Integer getDorsal() {
         return dorsal;
     }
 }
